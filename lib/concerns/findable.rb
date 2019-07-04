@@ -1,15 +1,17 @@
 module Concerns
 
   module Findable
-    
+
     def find_by_name(name)
-      object = nil
-      self.all.each do |element|
-        if element.name == name
-          object = element
-        end
-      end
-      object
+      self.all.detect {|element| element.name == name}
+# building detect... oops...
+#      object = nil
+#      self.all.each do |element|
+#        if element.name == name
+#          object = element
+#        end
+#      end
+#      object
     end
 
     def find_or_create_by_name(name)

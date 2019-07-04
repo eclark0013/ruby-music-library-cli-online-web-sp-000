@@ -26,9 +26,7 @@ class Genre
   end
 
   def self.create(name)
-    new = self.new(name)
-    new.save
-    new
+    self.new(name).tap {|o| o.save}
   end
 # end basics
 

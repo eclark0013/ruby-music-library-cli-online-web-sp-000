@@ -26,9 +26,11 @@ class Artist
   end
 
   def self.create(name)
-    new = self.new(name)
-    new.save
-    new
+    self.new(name).tap {|o| o.save}
+# => code below does the tap written out,
+#    new = self.new(name)
+#    new.save
+#    new
   end
 # end basics
 
